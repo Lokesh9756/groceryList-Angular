@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <h2 style="margin: 20px;">{{header}}</h2>
+</div>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+        <label for="id" style="margin-left: 10px;">ProductId</label>
+        <input type="text" class="form-control" [ngModel]="item.id" name="id" placeholder="id"
+            style="display: flex; width: 60vw;margin:  10px;padding: 10px;">
+    </div>
+    <div class="form-group">
+        <label for="name" style="margin-left: 10px;">Name</label>
+        <input type="text" class="form-control" [ngModel]="item.name" name="name" placeholder="name"
+            style="display: flex; width: 60vw;margin: 10px;padding: 10px;">
+    </div>
+    <div class="form-group">
+        <label for="unit" style="margin-left: 10px;">Unit</label>
+        <input type="text" class="form-control" [ngModel]="item.unit" name="unit" placeholder="unit"
+            style="display: flex; width: 60vw;margin: 10px;padding: 10px;">
+    </div>
+    <div class="form-group">
+        <label for="Price" style="margin-left: 10px;">Price</label>
+        <input type="text" class="form-control" [ngModel]="item.price" name="price" placeholder="price"
+            style="display: flex; width: 60vw;margin: 10px;padding: 10px;">
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary" style="margin: 10px;background-color: green;"> Save</button>
+    </div>
+</form>

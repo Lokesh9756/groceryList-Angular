@@ -1,0 +1,28 @@
+<h1 style="text-align: center;">ItemList</h1>
+<a routerLink="item/add/0"><button style="background-color: green;margin-bottom: 20px;;">Add
+        Item</button></a>
+<table style="width: 70vw; border:2px solid black">
+    <thead>
+        <th style="font-size: large;background-color: darkgray;border:2px solid black">itemId</th>
+        <th style=" font-size: large;background-color: darkgray;border:2px solid black">itemName</th>
+        <th style="font-size: large;background-color: darkgray;border:2px solid black">unit</th>
+        <th style=" font-size: large;background-color: darkgray;border:2px solid black">price</th>
+        <th style="font-size: large;background-color: darkgray;border:2px solid black">Total</th>
+    </thead>
+    <tbody>
+        <tr *ngFor=" let item of items">
+
+            <th>{{item.id}}</th>
+            <th>{{item.name}}</th>
+            <th>{{item.unit}}</th>
+            <th>{{item.price}}</th>
+            <th>{{item.total}}</th>
+            <td><a [routerLink]="['item/edit',item.id]"><button>Edit</button></a></td>
+            <td><button (click)="onDelete(item.id)" style="background-color: red;">x</button></td>
+        </tr>
+    </tbody>
+</table>
+<div style="display: flex;flex-direction: row;justify-content: center;margin-top: 20px;font-size: larger;color: coral;">
+    <div>GrandTotal:</div>
+    <div *ngIf="items[0]"> {{items[0].grandtotal}}</div>
+</div>
